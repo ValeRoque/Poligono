@@ -1,11 +1,11 @@
-# PRACTICA-POLIGONO--Hexagono-
+# PRACTICA - Polígono 2D en Blender con Python
 
 ## Introducción
 
 En esta práctica se genera un polígono 2D en Blender utilizando Python y la API bpy.  
 Los vértices se calculan matemáticamente usando coordenadas polares convertidas a coordenadas cartesianas.
 
-La figura se construye en el plano XY manteniendo Z = 0 para que sea 2D.
+La figura se construye en el plano XY manteniendo Z = 0 para que sea una figura bidimensional.
 
 ---
 
@@ -44,21 +44,28 @@ def crear_poligono_2d(nombre, lados, radio):
 # Limpiar la escena antes de empezar
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete()
-Explicación
-
-Se utiliza la fórmula matemática:
-
-x = r cos(θ)
-y = r sen(θ)
-
-Donde:
-
-r es el radio
-## Vista del resultado en Blender
-
-![Hexagono 2D](hexagono_blender.png)
-
-Esto permite distribuir los puntos uniformemente formando un hexágono regular.
 
 # Llamada a la función: Un hexágono de radio 5
 crear_poligono_2d("Poligono2D", lados=6, radio=5)
+```
+
+---
+
+## Resultado en Blender
+
+![Polígono en Blender](poligono_blender.png)
+
+---
+
+## Explicación
+
+Se utilizan las fórmulas matemáticas:
+
+x = r cos(θ)  
+y = r sen(θ)
+
+Donde:
+- r es el radio
+- θ es el ángulo que se calcula dividiendo 360° entre el número de lados
+
+Esto permite distribuir los vértices uniformemente formando un hexágono regular.
