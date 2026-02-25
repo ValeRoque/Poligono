@@ -54,6 +54,9 @@ y = r sen(θ)
 Donde:
 
 r es el radio
+## Resultado en Blender
+
+![Hexagono en Blender](hexagono_blender.png)
 
 θ es el ángulo calculado para cada vértice
 
