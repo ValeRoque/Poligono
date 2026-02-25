@@ -51,12 +51,6 @@ crear_poligono_2d("Poligono2D", lados=6, radio=5)
 
 ---
 
-## Resultado en Blender
-
-![Polígono en Blender](poligono_blender.png)
-
----
-
 ## Explicación detallada del código
 
 ### 1. Importación de librerías
