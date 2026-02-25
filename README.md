@@ -2,10 +2,10 @@
 
 ## Introducción
 
-En esta práctica se genera un polígono 2D en Blender utilizando Python y la API bpy.  
-Los vértices se calculan matemáticamente usando coordenadas polares convertidas a coordenadas cartesianas.
+En esta práctica se desarrolla un script en Python utilizando la API `bpy` de Blender para generar un polígono regular en el plano XY.  
+El objetivo es comprender cómo se pueden crear figuras geométricas de manera programada mediante cálculos matemáticos y estructuras de control.
 
-La figura se construye en el plano XY manteniendo Z = 0 para que sea una figura bidimensional.
+El polígono generado en este caso es un hexágono (6 lados), pero el código permite modificar el número de lados para crear cualquier polígono regular.
 
 ---
 
@@ -50,6 +50,100 @@ crear_poligono_2d("Poligono2D", lados=6, radio=5)
 ```
 
 ---
+
+## Resultado en Blender
+
+![Polígono en Blender](poligono_blender.png)
+
+---
+
+## Explicación detallada del código
+
+### 1. Importación de librerías
+
+Se importa:
+
+- `bpy`: Permite interactuar con Blender desde Python.
+- `math`: Se utiliza para realizar cálculos matemáticos como seno, coseno y el valor de π.
+
+---
+
+### 2. Creación de la función
+
+Se define la función:
+
+```python
+crear_poligono_2d(nombre, lados, radio)
+```
+
+Esta función recibe:
+- `nombre`: Nombre del objeto en Blender.
+- `lados`: Cantidad de lados del polígono.
+- `radio`: Distancia desde el centro hasta cada vértice.
+
+Esto permite que el código sea reutilizable y flexible.
+
+---
+
+### 3. Creación de la malla y el objeto
+
+Se crea una nueva malla y luego un objeto que la contiene.  
+Después se vincula el objeto a la colección actual para que aparezca en la escena.
+
+---
+
+### 4. Cálculo de los vértices
+
+Se utiliza un ciclo `for` que se repite según el número de lados.
+
+Para cada vértice se calcula un ángulo:
+
+angulo = 2πi / lados
+
+Luego se convierten coordenadas polares a cartesianas usando:
+
+x = r cos(θ)  
+y = r sen(θ)
+
+Donde:
+- r es el radio
+- θ es el ángulo
+- Z se mantiene en 0 para que sea una figura 2D
+
+Esto permite distribuir los puntos uniformemente alrededor del centro.
+
+---
+
+### 5. Creación de las aristas
+
+Se conecta cada vértice con el siguiente utilizando:
+
+(i, (i + 1) % lados)
+
+El operador módulo (%) permite que el último vértice se conecte nuevamente con el primero, cerrando la figura.
+
+---
+
+### 6. Carga de datos en la malla
+
+Se utiliza:
+
+malla.from_pydata(vertices, aristas, [])
+
+Para enviar los vértices y las conexiones a Blender y generar la geometría.
+
+---
+
+### 7. Limpieza de la escena
+
+Antes de crear el nuevo polígono, se eliminan los objetos existentes para evitar superposiciones.
+
+---
+
+## Conclusión
+
+Mediante el uso de programación y fórmulas trigonométricas es posible generar figuras geométricas de manera precisa y automática en Blender.  
+Este ejercicio demuestra cómo la matemática y la programación se combinan para crear modelos 3D de forma eficiente.
 
 ## Resultado en Blender
 
