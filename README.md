@@ -54,11 +54,9 @@ y = r sen(θ)
 Donde:
 
 r es el radio
-## Resultado en Blender
+## Vista del resultado en Blender
 
-![Hexagono en Blender](hexagono_blender.png)
-
-θ es el ángulo calculado para cada vértice
+![Hexagono 2D](hexagono_blender.png)
 
 Esto permite distribuir los puntos uniformemente formando un hexágono regular.
 
