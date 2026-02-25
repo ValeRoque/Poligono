@@ -134,11 +134,6 @@ Antes de crear el nuevo polígono, se eliminan los objetos existentes para evita
 
 ---
 
-## Conclusión
-
-Mediante el uso de programación y fórmulas trigonométricas es posible generar figuras geométricas de manera precisa y automática en Blender.  
-Este ejercicio demuestra cómo la matemática y la programación se combinan para crear modelos 3D de forma eficiente.
-
 ## Resultado en Blender
 
 ![Polígono en Blender](poligono_blender.png)
@@ -157,3 +152,8 @@ Donde:
 - θ es el ángulo que se calcula dividiendo 360° entre el número de lados
 
 Esto permite distribuir los vértices uniformemente formando un hexágono regular.
+
+## Conclusión
+
+Mediante el uso de programación y fórmulas trigonométricas es posible generar figuras geométricas de manera precisa y automática en Blender.  
+Este ejercicio demuestra cómo la matemática y la programación se combinan para crear modelos 3D de forma eficiente.
